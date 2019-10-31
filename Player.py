@@ -93,9 +93,9 @@ class Player():
         inputs.append(vision[2])
         inputs.append(vision[3])
 
-        inputs.append(self.x/600)                   # Player X value
-        inputs.append(coordinatesUp/600)         # X value of platform above
-        inputs.append(coordinatesDown/600 )         # X value of platform below
+        #inputs.append(self.x/600)                   # Player X value
+        inputs.append(coordinatesUp - self.x/600-self.x)         # X value of platform above
+        inputs.append(coordinatesDown - self.x/600 -self.x)         # X value of platform below
         
         output = self.brain.feedForward(inputs).tolist()     
 
